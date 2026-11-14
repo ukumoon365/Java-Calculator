@@ -98,6 +98,11 @@ public class CalculatorGUI extends JFrame implements ActionListener{
 
         if (buttonText.equals("    C    ")){
             textfield.setText("");
+        } else if (buttonText.equals("=")) {
+            String expression = textfield.getText();
+            CalculatorLogic Cal = new CalculatorLogic();
+            int result = Cal.Calculator(expression);
+            textfield.setText(result + "");
         } else{
             textfield.setText((textfield.getText() + buttonText));
         }
